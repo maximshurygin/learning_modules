@@ -33,9 +33,7 @@ CORS_ALLOWED_ORIGINS = [
 
 ## Инструкция по развертыванию:
 
-Склонировать репозиторий в IDE
-
-В терминале введите команду:
+Чтобы склонировать репозиторий в IDE в терминале введите команду:
 
 ```
 git clone https://github.com/maximshurygin/learning_modules
