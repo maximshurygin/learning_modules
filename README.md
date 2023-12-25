@@ -13,6 +13,8 @@
 - Django REST Framework
 - PostgreSQL
 - Docker
+- Swagger
+- Redoc
 
 ## Документация API
 
