@@ -12,6 +12,7 @@ class ModuleTest(TestCase):
 
     def setUp(self) -> None:
         self.module = Module.objects.create(
+            order_number=1,
             title='Module Test',
             description='Some module'
         )
@@ -37,6 +38,7 @@ class ModuleSerializerTest(TestCase):
 
     def setUp(self) -> None:
         self.module = Module.objects.create(
+            order_number=2,
             title='Serializer Test',
             description='Some description'
         )
@@ -48,7 +50,12 @@ class ModuleSerializerTest(TestCase):
         data = self.serializer.data
         self.assertEqual(
             set(data.keys()),
-            {'id', 'title', 'description'}
+            {'id', 'order_number', 'title', 'description'}
+        )
+
+        self.assertEqual(
+            data['order_number'],
+            2
         )
 
         self.assertEqual(
@@ -89,6 +96,7 @@ class ModuleTestCase(APITestCase):
 
     def setUp(self) -> None:
         self.module = Module.objects.create(
+            order_number=3,
             title='test',
             description='some test'
         )
@@ -97,6 +105,7 @@ class ModuleTestCase(APITestCase):
         """Тест создания модуля"""
 
         data = {
+            'order_number': 4,
             'title': 'Test1',
             'description': 'Some Test 1'
         }
